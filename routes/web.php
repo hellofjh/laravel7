@@ -34,7 +34,7 @@ Route::redirect('/jumpPage', 'user/getName', 301);
  * 可用方法：get post put patch delete options
  * 包含多个：match any
  */
-Route::match(array('get', 'post'), '/testMatch', 'UserContorller@testMatch');
+Route::match(array('get', 'post'), '/testMatch', 'UserController@testMatch');
 Route::any('/testAny', 'UserController@testAny');
 
 //视图路由
@@ -55,6 +55,6 @@ Route::get('user/{username3}', function ($username3){
 //中间件群组 已注册的中间件
 Route::get('user/testMiddleware', 'UserController@testMiddleware')->middleware('After');
 //完整类名
-Route::get('user/testMiddleware2', 'UserController$testMiddleware2')->middleware(\App\Http\Middleware\After::class);
+Route::get('user/testMiddleware2', 'UserController@testMiddleware2')->middleware(\App\Http\Middleware\After::class);
 
-
+Route::view('view', 'child');

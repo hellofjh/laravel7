@@ -10,4 +10,7 @@ class UserController extends Controller
     public function getName() {
         echo 'i am ross';
     }
+
+    public function testMatch(){}
+    public function testAny(){}
 }
